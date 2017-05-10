@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import DropdownMenu from './DropdownMenu';
@@ -225,10 +226,10 @@ class UserMenu extends React.Component {
 }
 
 UserMenu.propTypes = {
-  name: React.PropTypes.string,
-  image: React.PropTypes.string,
-  profileAction: React.PropTypes.func,
-  signOutAction: React.PropTypes.func,
+  name: PropTypes.string,
+  image: PropTypes.string,
+  profileAction: PropTypes.func,
+  signOutAction: PropTypes.func,
 };
 
 export default UserMenu;

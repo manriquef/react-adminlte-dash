@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import MenuItem from './MenuItem';
@@ -61,9 +62,9 @@ const Menu = ({ children, header, collapse }) => (
 );
 
 Menu.propTypes = {
-  children: React.PropTypes.node,
-  header: React.PropTypes.string,
-  collapse: React.PropTypes.bool,
+  children: PropTypes.node,
+  header: PropTypes.string,
+  collapse: PropTypes.bool,
 };
 
 Menu.Item = MenuItem;

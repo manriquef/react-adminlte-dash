@@ -1,11 +1,10 @@
 import * as path from 'path';
-
+import merge from 'webpack-merge';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import SystemBellPlugin from 'system-bell-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
-import merge from 'webpack-merge';
 
 import pkg from './package.json';
 
@@ -60,9 +59,16 @@ const common = {
         loader: 'raw',
       },
       {
-        test: /\.css$/,
-        loaders: ['style', 'css'],
+         test: /\.css$/, exclude: /\.useable\.css$/,
+         loader: "style!css",
       },
+      {
+        test: /\.useable\.css$/,
+        loader: "style/useable!css",
+      },
+      //  test: /\.css$/,
+      //  loaders: ['style', 'css'],
+      // },
     ],
   },
   plugins: [
